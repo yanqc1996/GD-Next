@@ -66,7 +66,6 @@ export async function getStaticProps({ params }) {
   const res = await axios.get(
     "http://114.55.106.181:7300/mock/60e01906a67078595d9aac7f/pangu/hms/nuwa/appApi/admin/setMeal/makeup"
   )
-  console.log(res.data.data.list)
   return {
     props: {
       posts: res.data.data.list,
