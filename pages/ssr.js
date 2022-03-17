@@ -1,17 +1,17 @@
-import Page from "../components/page.client"
-import Story from "../components/story.client"
-import Footer from "../components/footer.client"
-// Utils
-import fetchData from "../lib/fetch-data"
-import { transform } from "../lib/get-item"
+import Page from '../components/page.client'
+import Story from '../components/story.client'
+import Footer from '../components/footer.client'
 
-// 不基于流媒体渲染数据，采用之前的方式 ~~~ 为啥demo这样写就可以
+// Utils
+import fetchData from '../lib/fetch-data'
+import { transform } from '../lib/get-item'
 
 export async function getServerSideProps() {
-  const storyIds = await fetchData("topstories", 500)
-  console.log(storyIds)
+  const storyIds = await fetchData('topstories', 500)
   const data = await Promise.all(
-    storyIds.slice(0, 30).map((id) => fetchData(`item/${id}`).then(transform))
+    storyIds
+      .slice(0, 30)
+      .map((id) => fetchData(`item/${id}`).then(transform))
   )
 
   return {
