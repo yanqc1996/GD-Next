@@ -16,10 +16,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <script
-        type="text/javascript"
-        src="//cdn-4.convertexperiments.com/js/1004382-1004226.js"
-      ></script>
+      <head>
+        <script
+          type="text/javascript"
+          src="//cdn-4.convertexperiments.com/js/1004382-1004226.js"
+        ></script>
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   );
