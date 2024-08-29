@@ -1,3 +1,9 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "rules": {
+    /**
+     * for convert
+     */
+    "@next/next/no-sync-scripts": "off"
+  }
 }
